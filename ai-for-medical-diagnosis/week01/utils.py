@@ -1,6 +1,7 @@
 import urllib.request
 import pandas as pd
 import os
+from sklearn.model_selection import train_test_split
 
 def data_download(link, file_name):
     import urllib.request
@@ -60,3 +61,14 @@ def download_images():
     print("Download complete. Please check the checksums")
     
     return None 
+
+def train_test_split_data(dataframe):
+    
+    rowns = dataframe.loc[(dataframe['_No Finding'] == 1)].index
+    dataframe = dataframe.drop(rowns[5000:], axis = 0)
+    train_df, test_df = train_test_split(dataframe, test_size = 0.1, random_state = 42)
+    train_df, validation_df = train_test_split(train_X, test_size = 0.1, random_state = 42)
+    
+    return train_df, validation_df, test_df
+
+
