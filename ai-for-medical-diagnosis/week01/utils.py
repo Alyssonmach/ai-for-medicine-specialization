@@ -2,7 +2,7 @@ import urllib.request
 import pandas as pd
 import os
 
-def csv_load(link, file_name):
+def data_download(link, file_name):
     import urllib.request
     urllib.request.urlretrieve(link, file_name) 
     
@@ -36,7 +36,7 @@ def organize_csv(csv_file):
     
     return dataframe
 
-def download_data():
+def download_images():
     
     links = [
             'https://nihcc.box.com/shared/static/vfk49d74nhbxq3nqjg0900w5nvkorp5c.gz',
@@ -60,9 +60,3 @@ def download_data():
     print("Download complete. Please check the checksums")
     
     return None 
-
-def teste():
-    
-    os.system('!rm /content/utils.py')
-    
-    return None
