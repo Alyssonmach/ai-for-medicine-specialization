@@ -62,7 +62,7 @@ def download_images():
     
     return None 
 
-def train_test_split_data(dataframe):
+def train_validation_test_split(dataframe):
     
     rowns = dataframe.loc[(dataframe['_No Finding'] == 1)].index
     dataframe = dataframe.drop(rowns[5000:], axis = 0)
