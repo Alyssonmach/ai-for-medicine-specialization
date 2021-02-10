@@ -1,5 +1,6 @@
 import urllib.request
 import pandas as pd
+import os
 
 def csv_load(link, file_name):
     import urllib.request
@@ -62,6 +63,6 @@ def download_data():
 
 def teste():
     
-    !rm /content/utils.py
+    os.system('!rm /content/utils.py')
     
     return None
